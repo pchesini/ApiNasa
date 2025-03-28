@@ -3,39 +3,40 @@ import { Text, View, Image, StyleSheet } from "react-native";
 
 const Header = () => {
     return (
-        <View style={styles.headerContainer}>
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>Explora</Text>
+        <View style={styles.container}>
+            <View style={styles.leftContainer}>
+                <Text style={styles.title}>Explora</Text>
             </View>
-            <View style={styles.imageContainer}>
-                <Image source={require('../../assets/logo_nasa.png')} style={styles.logo} />
+            <View style={styles.rightContainer}>
+                <Image source={require('../../assets/logo_nasa.png')} style={styles.image} />
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    headerContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 20,
+    container: {
+       paddingTop: 50,
+        flexDirection: "row",
+        alignItems: "center",
     },
-    textContainer: {
-        marginBottom: 10,
+    leftContainer: {
+        flex: 1,
+        alignItems: "flex-start",
     },
-    text: {
-        fontSize: 24,
-        fontWeight: 'bold',
+    title: {
+        fontSize: 20,
+        color: '#fff',
     },
-    imageContainer: {
-        width: 200,
-        height: 200,
+    rightContainer: {
+        flex: 1,
+        alignItems: "flex-end",
     },
-    logo: {
-        width: '100%',
-        height: '100%',
-        resizeMode: 'contain',
+    image: {
+        width: 60,
+        height: 60,
     },
+
 });
 
 export default Header;
